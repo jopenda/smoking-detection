@@ -5,14 +5,6 @@ void updateLcd(){
   lcd.print(_sData);
 }
 
-void newData(float _data, float _myArr[]){
-  int arrSize = sizeof(_myArr)/sizeof(float);
-  for(int i=arrSize-1; i<1; i--){
-    _myArr[i] = _myArr[i-1];
-  }
-  _myArr[0] = _data;
-}
-
 
 void temp(float _data){  
     if(_data > th_Arr[2]){
