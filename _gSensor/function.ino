@@ -21,7 +21,7 @@ void temp(float _data){
           line2Clear();
           delay(100);
           lcd.setCursor(0, 1);
-          lcd.print("get out!!");
+          lcd.print("don't smoke!");
           delay(100);
           tempFlag = false;
         }
@@ -30,7 +30,7 @@ void temp(float _data){
       if(tempFlag){
         line2Clear();
         lcd.setCursor(0, 1);
-        lcd.print("danger!!");
+        lcd.print("don't smoke");
         tempFlag = false;
       }
     }else if(_data > th_Arr[0]){
