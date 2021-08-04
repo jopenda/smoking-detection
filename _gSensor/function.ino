@@ -14,24 +14,36 @@ void newData(float _data, float _myArr[]){
 }
 
 
-void temp(float _data){
-  if(_data > th_Arr[2]){
-    for(int i = 0; i < 10; i++) {
+void temp(float _data){  
+    if(_data > th_Arr[2]){
+      for(int i = 0; i < 10; i++) {
+        if(tempFlag){
+          line2Clear();
+          delay(100);
+          lcd.setCursor(0, 1);
+          lcd.print("get out!!");
+          delay(100);
+          tempFlag = false;
+        }
+      }
+    }else if(_data > th_Arr[1]){
+      if(tempFlag){
+        line2Clear();
+        lcd.setCursor(0, 1);
+        lcd.print("danger!!");
+        tempFlag = false;
+      }
+    }else if(_data > th_Arr[0]){
+      if(tempFlag){
+        line2Clear();
+        lcd.setCursor(0, 1);
+        lcd.print("warning");
+        tempFlag = false;
+      }
+    }else if(_data){
       line2Clear();
-      delay(100);
-      lcd.setCursor(0, 1);
-      lcd.print("get out!!");
-      delay(100);
     }
-  }else if(_data > th_Arr[1]){
-    line2Clear();
-    lcd.setCursor(0, 1);
-    lcd.print("danger!!");
-  }else if(_data > th_Arr[0]){
-    line2Clear();
-    lcd.setCursor(0, 1);
-    lcd.print("warning");
-  }
+    
 }
 
 void line1Clear(){

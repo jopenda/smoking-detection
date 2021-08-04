@@ -11,10 +11,12 @@
 
 unsigned int readTimer = _2m_SECOND;
 unsigned int printTimer = _2_SECOND;
+unsigned int tempTimer = _5_SECOND;
 
 
 boolean readFlag = false;
 boolean printFlag = false;
+boolean tempFlag = false;
 
 
 int th_Arr[3] = {70, 150, 200};
